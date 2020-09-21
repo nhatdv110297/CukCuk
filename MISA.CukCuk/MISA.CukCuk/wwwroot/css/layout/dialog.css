@@ -13,7 +13,7 @@
 
 .dialog {
     position: fixed;
-    width: 500px;
+    width: 600px;
     height: 300px;
     background-color: aqua;
     top: 50%;
@@ -28,8 +28,7 @@
     width:100%;
     background-color:#0072bc;
     height:30px;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
+    
     color:#ffffff;
    
 }
@@ -48,4 +47,11 @@
     border-radius:50%;
     background-color:#ffffff;
     color:#0072bc;
+    font-weight:600;
+    line-height:15px;
+    position:absolute;
+    text-align:center;
+    top:5px;
+    right:5px;
+    cursor:pointer;
 }
