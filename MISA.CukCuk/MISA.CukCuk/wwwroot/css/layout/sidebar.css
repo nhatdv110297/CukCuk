@@ -1,0 +1,134 @@
+﻿.sidebar {
+    width: 200px;
+    height:100vh;
+    background-color:#0973b9;
+    float:left;
+}
+
+.sidebar .logo{
+    height:50px;
+    width:100%;
+   
+    display:flex;
+    padding-left:10px;
+}
+
+.sidebar .menu{
+    width:100%;
+    height: calc(100% - 50px);
+   
+}
+
+.logo .icon-left-header {
+    width: 25px;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-image: url('../../content/img/icon-left-header.png');
+    background-position:center;
+}
+
+.logo .logo-text {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../content/img/logo-text.png');
+    background-repeat:no-repeat;
+    background-position-y:12px;
+    background-position-x:center;
+   
+}
+
+
+/*Menu*/
+
+.menu .menu-item{
+    display:flex;
+    width:100%;
+    border-top:1px solid #076aac;
+    border-bottom:1px solid #0a7cc9;
+    height:40px;
+
+
+}
+
+.menu .menu-item:hover{
+    background-color:#ff6a00;
+}
+
+    .menu .menu-item .menu-item-icon {
+        width: 30px;
+        height: 25px;
+        align-self:center;
+        margin-left:5px;
+        background-image: url('../../content/img/iconmenu.png');
+        background-repeat:no-repeat;
+    }
+
+.menu-item:nth-child(1) .menu-item-icon {
+    background-position-y: -2px;
+    background-position-x: -2px;
+}
+
+.menu-item:nth-child(2) .menu-item-icon {
+    background-position-y: -194px;
+    background-position-x: 1px
+}
+
+.menu-item:nth-child(3) .menu-item-icon {
+    background-position-y: -376px;
+}
+
+.menu-item:nth-child(4) .menu-item-icon {
+    background-position-y: -40px;
+}
+
+.menu-item:nth-child(5) .menu-item-icon {
+    background-position-y: -80px;
+}
+
+.menu-item:nth-child(6) .menu-item-icon {
+    background-image: url('../../content/img/icon-deposit.png');
+    background-position-x: 6px
+}
+
+.menu-item:nth-child(7) .menu-item-icon {
+    background-image: url('../../content/img/icon-cost.png');
+    background-position-x: 2px
+}
+
+.menu-item:nth-child(8) .menu-item-icon {
+    background-position-y: -118px;
+    background-position-x: 1px
+}
+
+.menu-item:nth-child(9) .menu-item-icon {
+    background-image: url('../../content/img/ic_hoadon.png');
+    background-position-x: 5px
+}
+
+.menu-item:nth-child(10) .menu-item-icon {
+    background-position-y: -156px;
+    background-position-x: 2px
+}
+
+.menu-item:nth-child(11) .menu-item-icon {
+    background-position-y: -234px;
+    background-position-x: 2px
+}
+
+.menu-item:nth-child(12) .menu-item-icon {
+    background-image: url('../../content/img/iconhelp.png');
+    background-position-x: 4px
+}
+
+.menu-item:nth-child(13) .menu-item-icon {
+    background-image: url('../../content/img/icon-subscriber.png');
+    background-position-x: 4px
+}
+
+.menu .menu-item .menu-item-text{
+    color:#ffffff;
+    line-height:40px;
+    margin-left:5px;
+}
+
+
