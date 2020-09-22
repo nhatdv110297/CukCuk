@@ -13,8 +13,8 @@
 
 .dialog {
     position: fixed;
-    width: 600px;
-    height: 300px;
+    width: 602px;
+    height: 328px;
     background-color: aqua;
     top: 50%;
     left: 50%;
@@ -22,6 +22,10 @@
     background-color: #ffffff;
     border-radius: 5px;
     border: 5px solid #0072bc
+}
+
+.dialog .dialog-body{
+    padding:8px;
 }
 
 .dialog .dialog-titlebar{
@@ -55,3 +59,42 @@
     right:5px;
     cursor:pointer;
 }
+
+.dialog .dialog-bottom-left{
+    float:left;
+}
+
+.dialog .dialog-bottom-right{
+    float:right;
+    display:flex;
+}
+
+.btn-bottom-dialog{
+    display:flex;
+    align-items:center;
+    
+}
+
+.btn-dialog-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url('../../content/img/iconsprite.png');
+}
+
+.btn-dialog-help {
+    background-position: 0px -1599px;
+}
+
+.btn-dialog-save {
+    background-position: 0px -768px;
+}
+
+.btn-dialog-save-as {
+    background-position: 0px -737px;
+}
+
+.btn-dialog-cancel {
+    background-position: 0px -1967px;
+}
+
+

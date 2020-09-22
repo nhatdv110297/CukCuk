@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-
     <link href="../../css/layout/dialog.css" rel="stylesheet" />
-    <link href="../../css/layout/main.css" rel="stylesheet" />
     <link href="../../css/layout/sidebar.css" rel="stylesheet" />
+    <link href="../../css/layout/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="sidebar">
@@ -51,7 +51,7 @@
                 <div class="menu-item-icon"></div>
                 <div class="menu-item-text">Thực đơn</div>
             </div>
-            <div class="menu-item">
+            <div class="menu-item" onclick="showDialog()">
                 <div class="menu-item-icon"></div>
                 <div class="menu-item-text">Danh mục</div>
             </div>
@@ -85,12 +85,23 @@
                     <option>English</option>
                 </select>
             </div>
-            <div class="notification"></div>
-            <div class="question"></div>
-            <div class="call-new">
-
+            <div class="notification">
+                <i class="fa fa-globe" aria-hidden="true" style="font-size:30px;color:#ffffff"></i>
+                <div class="number-notification">5</div>
             </div>
-            <div class="account"></div>
+            <div class="question">
+                <img height="50" style="margin-top:-10px; cursor:pointer" src="../../content/img/question.png" />
+            </div>
+            <div class="call-new">
+                
+                <img width="65" height="65" style="margin-top:-7px; cursor:pointer" src="../../content/img/ic_support.svg" />
+                
+            </div>
+            <div class="account">
+                <img class="avatar" src="../../content/img/account_circle_white_36x36.png" />
+                <label class="user-name">Nguyễn Văn A</label>
+                <i class="fa fa-caret-down" style="color:#ffffff;font-size:15px;cursor:pointer;margin-left:10px"></i>
+            </div>
         </div>
         
         <div class="content">
@@ -176,12 +187,12 @@
 
 
     </div>
-    <div class="screen-dialog">
+    <div class="screen-dialog" style="display:none">
         <div class="dialog-model"></div>
         <div class="dialog">
             <div class="dialog-titlebar">
                 <div class="title">Khách hàng</div>
-                <div class="btn-close">x</div>
+                <div class="btn-close" onclick="closeDialog()">x</div>
             </div>
             <div class="dialog-body">
                 <table border="0" width="100%">
@@ -197,37 +208,76 @@
                     </tr>
                     <tr>
                         <td>Nhóm khách hàng</td>
-                        <td><input type="text"</td>
+                        <td><input type="text" /></td>
                     </tr>
                     <tr>
                         <td>DT di động</td>
-                        <td><input type="text"</td>
+                        <td><input type="text" /></td>
                     </tr>
                     <tr>
                         <td>Ngày sinh</td>
-                        <td><input type="date"</td>
+                        <td><input type="date" /></td>
                     </tr>
                     <tr>
                         <td>Tên công ty</td>
-                        <td><input type="text"</td>
+                        <td colspan="3"><input type="text" /></td>
                     </tr>
                     <tr>
                         <td>Mã số thuế</td>
-                        <td><input type="text"</td>
+                        <td ><input type="text" /></td>
                         <td>Email</td>
-                        <td><input type="email"</td>
+                        <td><input type="email" /></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
-                        <td><input type="text"</td>
+                        <td colspan="3"><input type="text" /></td>
                     </tr>
                     <tr>
                         <td>Ghi chú</td>
-                        <td><input type="text"</td>
+                        <td colspan="3" ><textarea cols="64"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn-bottom-dialog">
+                                <div class="btn-dialog-icon btn-dialog-help"></div>
+                                <div class="btn-text">Giúp</div>
+                            </button>
+                        </td>
+                        <td colspan="3">
+                            <div class="dialog-bottom-right">
+                                <button class="btn-bottom-dialog" style="margin-right:5px">
+                                    <div class="btn-dialog-icon btn-dialog-save"></div>
+                                    <div class="btn-text">Cất</div>
+                                </button>
+
+                                <button class="btn-bottom-dialog" style="margin-right:5px">
+                                    <div class="btn-dialog-icon btn-dialog-save-as"></div>
+                                    <div class="btn-text">Cất & Thêm</div>
+                                </button>
+                                <button class="btn-bottom-dialog">
+                                    <div class="btn-dialog-icon btn-dialog-cancel"></div>
+                                    <div class="btn-text">Huỷ bỏ</div>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
+            <div class="dialog-bottom">
+                
+                
+            </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function showDialog() {
+            document.getElementsByClassName("screen-dialog")[0].style.display = "block";
+        }
+
+        function closeDialog() {
+            document.getElementsByClassName("screen-dialog")[0].style.display = "none";
+        }
+    </script>
 </body>
 </html>
