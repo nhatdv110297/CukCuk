@@ -93,9 +93,9 @@
                 <img height="50" style="margin-top:2px ; cursor:pointer" src="../../content/img/question.png" />
             </div>
             <div class="call-new">
-                
+
                 <img width="65" height="65" style="margin-top:-7px; cursor:pointer" src="../../content/img/ic_support.svg" />
-                
+
             </div>
             <div class="account">
                 <img class="avatar" src="../../content/img/account_circle_white_36x36.png" />
@@ -103,12 +103,12 @@
                 <i class="fa fa-caret-down" style="color:#ffffff;font-size:15px;cursor:pointer;margin-left:10px"></i>
             </div>
         </div>
-        
+
         <div class="content">
             <div class="content-header">Danh mục > Khách hàng</div>
             <div class="content-body">
                 <div class="toolbar">
-                    <button>
+                    <button id="btnAdd">
                         <div class="btn-icon btn-icon-add"></div>
                         <div class="btn-text">Thêm</div>
                     </button>
@@ -129,11 +129,11 @@
                         <div class="btn-text">Nạp</div>
                     </button>
                 </div>
-                <div class="table" >
-                    <table width="100%" border="1">
+                <div class="table">
+                    <table width="100%" border="1" id="tableListCustomer">
                         <thead>
                             <tr>
-                                
+
                                 <th>Mã khách hàng</th>
                                 <th>Tên khách hàng</th>
                                 <th>Ngày sinh</th>
@@ -189,7 +189,7 @@
     </div>
     <div class="screen-dialog" style="display:none">
         <div class="dialog-model"></div>
-        <div class="dialog">
+        <div class="add-dialog">
             <div class="dialog-titlebar">
                 <div class="title">Khách hàng</div>
                 <div class="btn-close" onclick="closeDialog()">x</div>
@@ -224,7 +224,7 @@
                     </tr>
                     <tr>
                         <td>Mã số thuế</td>
-                        <td ><input type="text" /></td>
+                        <td><input type="text" /></td>
                         <td>Email</td>
                         <td><input type="email" /></td>
                     </tr>
@@ -234,7 +234,7 @@
                     </tr>
                     <tr>
                         <td>Ghi chú</td>
-                        <td colspan="3" ><textarea cols="64"></textarea></td>
+                        <td colspan="3"><textarea cols="64"></textarea></td>
                     </tr>
                     <tr>
                         <td>
@@ -263,13 +263,77 @@
                     </tr>
                 </table>
             </div>
-            <div class="dialog-bottom">
-                
-                
-            </div>
+
         </div>
     </div>
 
+    <div class="dialog-add" id="formAdd" style="display:none">
+        <div class="dialog-model"></div>
+        <div class="dialog">
+            <div class="dialog-titlebar">
+                <div class="title">Khách hàng</div>
+                <div class="btn-close" id="btnCloseFormAdd">x</div>
+            </div>
+            <div class="dialog-body">
+                <table border="0" width="100%">
+                    <tr>
+                        <td>Mã khách hàng</td>
+                        <td><input id="txtCustomerCode" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Tên khách hàng</td>
+                        <td><input id="txtCustomerName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh</td>
+                        <td><input id="dtBỉthday" type="date" /></td>
+                    </tr>
+                    <tr>
+                        <td>DT di động</td>
+                        <td><input id="txtMobile" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Số tiền nợ</td>
+                        <td><input id="txtDebitAmount" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Là thành viên của 5Food</td>
+                        <td><input id="ckIs5FoodMember" type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn-bottom-dialog" >
+                                <div class="btn-dialog-icon btn-dialog-help"></div>
+                                <div class="btn-text">Giúp</div>
+                            </button>
+                        </td>
+                        <td colspan="3">
+                            <div class="dialog-bottom-right">
+                                <button class="btn-bottom-dialog" id="btnSave" style="margin-right:5px">
+                                    <div class="btn-dialog-icon btn-dialog-save"></div>
+                                    <div class="btn-text">Cất</div>
+                                </button>
+
+                                <button class="btn-bottom-dialog" style="margin-right:5px">
+                                    <div class="btn-dialog-icon btn-dialog-save-as"></div>
+                                    <div class="btn-text">Cất & Thêm</div>
+                                </button>
+                                <button class="btn-bottom-dialog" id="btnClose2">
+                                    <div class="btn-dialog-icon btn-dialog-cancel"></div>
+                                    <div class="btn-text">Huỷ bỏ</div>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <script src="../../js/help/common.js"></script>
+    <script src="../../js/lib/jquery-3.5.1.min.js"></script>
+    <script src="../../js/page/customer.js"></script>
     <script type="text/javascript">
         function showDialog() {
             document.getElementsByClassName("screen-dialog")[0].style.display = "block";
@@ -278,6 +342,8 @@
         function closeDialog() {
             document.getElementsByClassName("screen-dialog")[0].style.display = "none";
         }
+
+       
     </script>
 </body>
 </html>
