@@ -8,21 +8,16 @@
  * */
 class CustomerJS {
     constructor() {
-        var me = this;
-        me.loadData();
-        $('#btnAdd').click(function () {
-            $('#formAdd').show();
-        })
-        $('#btnCloseFormAdd').click(function () {
-            $('#formAdd').hide();
-        })
-        $('#btnClose2').click(function () {
-            $('#formAdd').hide();
-        })
-        $('#btnSave').click(this.saveData.bind(me));
+        
+        this.loadData();
+        $('#btnAdd').click(this.showForm);
+        $('#btnCloseFormAdd').click(this.hideForm.bind(this));
+        $('#btnClose2').click(this.hideForm.bind(this));
+        $('#btnSave').click(this.saveData.bind(this));
         $('tr').click(function () {
-
+        
         })
+        
     }
 
     /**
@@ -39,10 +34,10 @@ class CustomerJS {
 
                                     <td>${item.CustomerCode}</td>
                                     <td>${item.CustomerName}</td>
-                                    <td>${commonJs.formatDate(item.Birthday)}</td>
+                                    <td class="text-center" style="text-align:center">${commonJs.formatDate(item.Birthday)}</td>
                                     <td>${item.PhoneNumber}</td>
-                                    <td>${commonJs.formatMoney(item.DebitAmount)}</td>
-                                    <td><input type="checkbox" ${commonJs.buildCheckBoxByValue(item.Is5FoodMember)} /></td>
+                                    <td class="text-right" style="text-align:right">${commonJs.formatMoney(item.DebitAmount)}</td>
+                                    <td class="text-center" style="text-align:center"><input type="checkbox" disabled="disabled" ${commonJs.buildCheckBoxByValue(item.Is5FoodMember)} /></td>
                                 </tr>`;
             $('#tableListCustomer tbody').append(customerInforHTML);
 
@@ -65,7 +60,7 @@ class CustomerJS {
         var customer = {
             CustomerCode: $('#txtCustomerCode').val(),
             CustomerName: $('#txtCustomerName').val(),
-            Birthday: new Date($('#dtBỉthday').val()),
+            Birthday: new Date($('#dtBirthday').val()),
             PhoneNumber: $('#txtMobile').val(),
             DebitAmount: $('#txtDebitAmount').val(),
             Is5FoodMember: $('#ckIs5FoodMember').is(":checked")
@@ -79,9 +74,39 @@ class CustomerJS {
         //hien thi thong bao
         alert("Cất thàng công!");
         //dong form
+        this.emptyDataForm();
         $('#formAdd').hide();
         //load lai du lieu hien thi
         this.loadData();
+    }
+
+    /**
+     * ham lam trong form sai khi add hoac dong
+     * */
+    emptyDataForm() {
+        $('#txtCustomerCode').val("");
+        $('#txtCustomerName').val("");
+        $('#dtBirthday').val("");
+        $('#txtMobile').val("");
+        $('#txtDebitAmount').val("");
+        $('#ckIs5FoodMember').prop('checked', false);
+    }
+
+    /**
+     * ham hien form add dialog
+     * 
+     */
+    showForm() {
+        $('#formAdd').show();
+    }
+
+    /**
+     * ham an form add dialog
+     * 
+     */
+    hideForm() {
+        this.emptyDataForm();
+        $('#formAdd').hide();
     }
 }
 
