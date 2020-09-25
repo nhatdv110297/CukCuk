@@ -10,14 +10,27 @@ class CustomerJS {
     constructor() {
         
         this.loadData();
+        this.initEvent();
+        
+    }
+
+    /**
+     * khoi tao cac su kien
+     * 
+     * 
+     * */
+    initEvent() {
         $('#btnAdd').click(this.showForm);
         $('#btnCloseFormAdd').click(this.hideForm.bind(this));
         $('#btnClose2').click(this.hideForm.bind(this));
         $('#btnSave').click(this.saveData.bind(this));
-        $('tr').click(function () {
-        
+        $('table#tableListCustomer').on('click', 'tr', function () {
+            $(this).siblings().removeClass('item-selected');
+            $(this).addClass('item-selected');
         })
-        
+        $('tr').click(function () {
+
+        })
     }
 
     /**

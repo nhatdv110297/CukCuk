@@ -23,9 +23,10 @@
         width: 100%;
         height: 50px;
         background-color: #0973b9;
+        
         display:flex;
         align-items:center;
-        justify-content:space-around
+       
     }
 
 
@@ -42,22 +43,33 @@
 .dropdown-select{
     width:200px;
     height:30px; 
-    
+   
     background-color:#005082;
     color:#ffffff;
     border:none;
     padding-left:5px;
+    float:left;
 }
 
-.header .dropdown-language{
+.header-left {
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content:flex-end;
+}
+
+
+
+.dropdown-language{
    
-    
+    margin-right:10px;
 }
 
-.header .notification {
+.notification {
     width: 30px;
     height: 30px;
    cursor:pointer;
+   margin-right:10px;
 }
 
 .number-notification {
@@ -72,19 +84,21 @@
        border-radius:2px;
     }
 
-.header .question {
-   
+.question {
+   margin-right:5px;
     
 }
 
-.header .call-new {
+.call-new {
+    margin-right:5px;
     width: 50px;
     height: 50px;
 }
 
 
 
-.header .account {
+.account {
+    margin-right:20px;
     width: 200px;
     height: 30px;
     display:flex;
@@ -92,13 +106,13 @@
     justify-content:flex-end;
 }
 
-.header .account .avatar{
+.account .avatar{
     width:36px;
     height:36px;
    
 }
 
-    .header .account .user-name {
+    .account .user-name {
         color: #ffffff;
         margin-left: 10px;
         font-size: 15px;
@@ -217,4 +231,8 @@ td.text-center{
 
 td.text-left{
     text-align:left;
+}
+
+table tbody tr.item-selected{
+    background-color:#c2c2c2;
 }
