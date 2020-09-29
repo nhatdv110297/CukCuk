@@ -6,12 +6,15 @@
 /**
  * Object JS quan ly cac su kien cho trang danh muc khach hang
  * */
-class CustomerJS {
+class CustomerJS extends BaseJS {
     constructor() {
         
-        this.loadData();
-        this.initEvent();
+        super();
         
+    }
+
+    setData() {
+        this.Data = fakeData;
     }
 
     /**
@@ -19,7 +22,7 @@ class CustomerJS {
      * 
      * 
      * */
-    initEvent() {
+    /*initEvent() {
         $('#btnAdd').click(this.showForm);
         $('#btnCloseFormAdd').click(this.hideForm.bind(this));
         $('#btnClose2').click(this.hideForm.bind(this));
@@ -28,16 +31,13 @@ class CustomerJS {
             $(this).siblings().removeClass('item-selected');
             $(this).addClass('item-selected');
         })
-        $('tr').click(function () {
-
-        })
-    }
+    }*/
 
     /**
      * Load du lieu
      * CreateBy:NhatDV (23/9/2020)
      */
-    loadData() {
+    /*loadData() {
         $('#tableListCustomer tbody').empty();
         // Lay du lieu ve
         var data = fakeData;
@@ -55,7 +55,7 @@ class CustomerJS {
             $('#tableListCustomer tbody').append(customerInforHTML);
 
         })
-    }
+    }*/
 
     /**
      * ham luu du lieu
@@ -109,18 +109,18 @@ class CustomerJS {
      * ham hien form add dialog
      * 
      */
-    showForm() {
+    /*showForm() {
         $('#formAdd').show();
-    }
+    }*/
 
     /**
      * ham an form add dialog
      * 
      */
-    hideForm() {
+    /*hideForm() {
         this.emptyDataForm();
         $('#formAdd').hide();
-    }
+    }*/
 }
 
 

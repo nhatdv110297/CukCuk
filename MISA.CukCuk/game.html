@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+	width:480px;
+    height:270px;
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var canvas, context;
+var myObj;
+var myPipes = [];
+
+function startGame(){
+	canvas = document.createElement("canvas");
+    context = canvas.getContext('2d');
+    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+    
+    myObj = new component(15,15,"red",10,60);
+	pushPipe();
+	drawComponent(myObj);
+	drawComponent(myPipes[0]);
+	drawComponent(myPipes[1]);
+    setInterval(updateGame, 20)
+}
+
+
+function component(width, height, color, x, y) {
+  this.width = width;
+  this.height = height;
+  this.x = x;
+  this.y = y;
+  this.color = color;
+  
+}
+
+function drawComponent(component){
+	context.fillStyle = component.color;
+	context.fillRect(component.x, component.y, component.width, component.height);
+}
+
+function updateGame(){
+	if(myObj.y<canvas.height-15) myObj.y++;
+	context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	if(myPipes[0].x<=-10){
+		myPipes.shift();
+		myPipes.shift();
+		pushPipe();
+	}
+	else{
+		myPipes[0].x--;
+		myPipes[1].x--;
+	}
+	drawComponent(myObj);
+	drawComponent(myPipes[0]);
+	drawComponent(myPipes[1]);
+}
+
+function pushPipe(){
+	x = canvas.width;
+    height = Math.floor(Math.random()*100);
+    myPipes.push(new component(10, height, "green", x, 0));
+    myPipes.push(new component(10, x - height - 50, "green", x, height + 50));
+	
+}
+
+</script>
+</body>
+</html>

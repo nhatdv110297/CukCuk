@@ -106,7 +106,7 @@
                 </div>
             </div>
 
-            
+
         </div>
 
         <div class="content">
@@ -129,7 +129,7 @@
                         <div class="btn-icon btn-icon-delete"></div>
                         <div class="btn-text">Xoá</div>
                     </button>
-                    <button>
+                    <button id="btnRefresh">
                         <div class="btn-icon btn-icon-refresh"></div>
                         <div class="btn-text">Nạp</div>
                     </button>
@@ -139,53 +139,28 @@
                         <thead>
                             <tr>
 
-                                <th>Mã khách hàng</th>
-                                <th>Tên khách hàng</th>
-                                <th>Ngày sinh</th>
-                                <th>Số điện thoại</th>
-                                <th>Số tiền nợ</th>
-                                <th>Là thành viên 5Food</th>
+                                <th fieldName="CustomerCode">Mã khách hàng</th>
+                                <th fieldName="CustomerName">Tên khách hàng</th>
+                                <th fieldName="Birthday" typeData="Date">Ngày sinh</th>
+                                <th fieldName="PhoneNumber">Số điện thoại</th>
+                                <th fieldName="DebitAmount" typeData="Money">Số tiền nợ</th>
+                                <th fieldName="Is5FoodMember" typeData="Boolean">Là thành viên 5Food</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-
-                                <td>KH001</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>11/22/1991</td>
-                                <td>0123456789</td>
-                                <td>1000000</td>
-                                <td><input type="checkbox" checked /></td>
-                            </tr>
-                            <tr>
-
-                                <td>KH001</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>11/22/1991</td>
-                                <td>0123456789</td>
-                                <td>1000000</td>
-                                <td><input type="checkbox"  checked /></td>
-                            </tr>
-                            <tr>
-
-                                <td>KH001</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>11/22/1991</td>
-                                <td>0123456789</td>
-                                <td>1000000</td>
-                                <td><input type="checkbox" checked /></td>
-                            </tr>
-                            <tr>
-
-                                <td>KH001</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>11/22/1991</td>
-                                <td>0123456789</td>
-                                <td>1000000</td>
-                                <td><input type="checkbox" checked /></td>
-                            </tr>
+                            
                         </tbody>
                     </table>
+                </div>
+                <div class="footter">
+                    <button class="btn-footter" id="btn-page-first"></button>
+                    <button class="btn-footter" id="btn-page-prev"></button>
+                    <div class="label-page">Trang</div>
+                    <input type="number" style="width:40px; margin-left:10px; text-align:center; height:20px;" />
+                    <div class="label-page">trên 1</div>
+                    <button class="btn-footter" id="btn-page-next"></button>
+                    <button class="btn-footter" id="btn-page-last"></button>
+                    <button class="btn-footter" id="btn-refresh"></button>
                 </div>
             </div>
         </div>
@@ -338,8 +313,9 @@
     </div>
 
     <script src="../../js/lib/jquery-3.5.1.min.js"></script>
-    <script src="../../js/page/customer.js"></script>
     <script src="../../js/help/common.js"></script>
+    <script src="../../js/base/base.js"></script>
+    <script src="../../js/page/customer.js"></script>
     <script type="text/javascript">
         function showDialog() {
             document.getElementsByClassName("screen-dialog")[0].style.display = "block";
