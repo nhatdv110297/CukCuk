@@ -14,6 +14,7 @@
     buildCheckBoxByValue(value) {
         if (value) return "checked";
         else return "";
+        
     },
 
     /**
