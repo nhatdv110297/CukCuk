@@ -11,11 +11,15 @@ canvas {
 </style>
 </head>
 <body onload="startGame()">
+
+<br>
+<button onclick="onFlap()">Flap</button>
 <script>
 
 var canvas, context;
 var myObj;
 var myPipes = [];
+var myInterval;
 
 function startGame(){
 	canvas = document.createElement("canvas");
@@ -27,7 +31,7 @@ function startGame(){
 	drawComponent(myObj);
 	drawComponent(myPipes[0]);
 	drawComponent(myPipes[1]);
-    setInterval(updateGame, 20)
+    myInterval = setInterval(updateGame, 20)
 }
 
 
@@ -46,20 +50,25 @@ function drawComponent(component){
 }
 
 function updateGame(){
-	if(myObj.y<canvas.height-15) myObj.y++;
-	context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-	if(myPipes[0].x<=-10){
-		myPipes.shift();
-		myPipes.shift();
-		pushPipe();
+	if(processCollision()){
+		clearInterval(myInterval);
 	}
 	else{
-		myPipes[0].x--;
-		myPipes[1].x--;
+		if(myObj.y<canvas.height-15) myObj.y++;
+		context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		if(myPipes[0].x<=-10){
+			myPipes.shift();
+			myPipes.shift();
+			pushPipe();
+		}
+		else{
+			myPipes[0].x--;
+			myPipes[1].x--;
+		}
+		drawComponent(myObj);
+		drawComponent(myPipes[0]);
+		drawComponent(myPipes[1]);
 	}
-	drawComponent(myObj);
-	drawComponent(myPipes[0]);
-	drawComponent(myPipes[1]);
 }
 
 function pushPipe(){
@@ -68,6 +77,27 @@ function pushPipe(){
     myPipes.push(new component(10, height, "green", x, 0));
     myPipes.push(new component(10, x - height - 50, "green", x, height + 50));
 	
+}
+
+function processCollision(){
+	var myleft = myObj.x;
+    var myright = myObj.x + (myObj.width);
+    var mytop = myObj.y;
+    var mybottom = myObj.y + (myObj.height);
+    var otherleft = myPipes[0].x;
+    var otherright = myPipes[0].x + (myPipes[0].width);
+    var othertop = myPipes[0].y +myPipes[0].height;
+    var otherbottom = myPipes[1].y;
+    var crash = false;
+	if ((myright>=otherleft)) {
+		if((mybottom>=otherbottom)||(mytop<=othertop))
+			crash = true;
+    }
+    return crash;
+}
+
+function onFlap(){
+	myObj.y-=20;
 }
 
 </script>
