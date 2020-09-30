@@ -78,6 +78,25 @@ class BaseJS {
 
 
     /**
+     * ham save data
+     * DVNhat
+     * */
+    saveData() {
+        var fields = $('#formAdd .dialog .dialog-body table tr td input');
+        var obj = new Object();
+        $.each(fields, function (index, field) {
+            if ($(field).attr("type") == "checkbox") {
+                debugger
+                obj[$(field).attr("fieldName")] = $(field).prop('checked', false);
+            } else {
+                obj[$(field).attr("fieldName")] = $(field).val();
+            }
+        })
+        debugger
+    }
+
+
+    /**
      * ham hien form add dialog
      * 
      */
@@ -90,7 +109,7 @@ class BaseJS {
      * 
      */
     hideForm() {
-        this.emptyDataForm();
+        //this.emptyDataForm();
         $('#formAdd').hide();
     }
 }

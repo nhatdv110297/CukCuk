@@ -22,14 +22,14 @@ class CustomerJS extends BaseJS {
      * ham luu du lieu
      *
      */
-    saveData() {
+    /*saveData() {
         //lay du lieu tu input
-        /*var customerCode = $('#txtCustomerCode').val();
+        var customerCode = $('#txtCustomerCode').val();
         var customerName = $('#txtCustomerName').val();
         var birthday = $('#dtBỉthday').val();
         var mobile = $('#txtMobile').val();
         var debitAmount = $('#txtDebitAmount').val();
-        var is5Food = $('#ckIs5FoodMember').is(":checked");*/
+        var is5Food = $('#ckIs5FoodMember').is(":checked");
 
         var customer = {
             CustomerCode: $('#txtCustomerCode').val(),
@@ -52,7 +52,7 @@ class CustomerJS extends BaseJS {
         $('#formAdd').hide();
         //load lai du lieu hien thi
         this.loadData();
-    }
+    }*/
 
     /**
      * ham lam trong form sai khi add hoac dong
