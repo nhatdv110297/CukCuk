@@ -17,46 +17,7 @@ class CustomerJS extends BaseJS {
         this.Data = fakeData;
     }
 
-    /**
-     * khoi tao cac su kien
-     * 
-     * 
-     * */
-    /*initEvent() {
-        $('#btnAdd').click(this.showForm);
-        $('#btnCloseFormAdd').click(this.hideForm.bind(this));
-        $('#btnClose2').click(this.hideForm.bind(this));
-        $('#btnSave').click(this.saveData.bind(this));
-        $('table#tableListCustomer').on('click', 'tr', function () {
-            $(this).siblings().removeClass('item-selected');
-            $(this).addClass('item-selected');
-        })
-    }*/
-
-    /**
-     * Load du lieu
-     * CreateBy:NhatDV (23/9/2020)
-     */
-    /*loadData() {
-        $('#tableListCustomer tbody').empty();
-        // Lay du lieu ve
-        var data = fakeData;
-        // Doc du lieu va gen du lieu tung khach hang voi HTML
-        $.each(data, function (index, item) {
-            var customerInforHTML = `<tr>
-
-                                    <td>${item.CustomerCode}</td>
-                                    <td>${item.CustomerName}</td>
-                                    <td class="text-center" style="text-align:center">${commonJs.formatDate(item.Birthday)}</td>
-                                    <td>${item.PhoneNumber}</td>
-                                    <td class="text-right" style="text-align:right">${commonJs.formatMoney(item.DebitAmount)}</td>
-                                    <td class="text-center" style="text-align:center"><input type="checkbox" disabled="disabled" ${commonJs.buildCheckBoxByValue(item.Is5FoodMember)} /></td>
-                                </tr>`;
-            $('#tableListCustomer tbody').append(customerInforHTML);
-
-        })
-    }*/
-
+    
     /**
      * ham luu du lieu
      *
@@ -104,23 +65,6 @@ class CustomerJS extends BaseJS {
         $('#txtDebitAmount').val("");
         $('#ckIs5FoodMember').prop('checked', false);
     }
-
-    /**
-     * ham hien form add dialog
-     * 
-     */
-    /*showForm() {
-        $('#formAdd').show();
-    }*/
-
-    /**
-     * ham an form add dialog
-     * 
-     */
-    /*hideForm() {
-        this.emptyDataForm();
-        $('#formAdd').hide();
-    }*/
 }
 
 
